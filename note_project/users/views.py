@@ -9,8 +9,9 @@ def register(request):
         if form.is_valid():
             form.save()
             login(request, form.save())
-            return redirect(reversed('notes_app:homes'))
-        else:
-            form = UserCreationForm()
+            home = reversed('notes_app:home')
+            return redirect(home)
+    else:
+        form = UserCreationForm()
     form = UserCreationForm()
     return render(request, 'users/register.html', { 'form':form })

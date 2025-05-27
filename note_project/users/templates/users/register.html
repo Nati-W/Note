@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<form action="users/register" method="post">
+<form method="post">
+    {% csrf_token %}
 {{form}}
 
 <button>Submit</button>
